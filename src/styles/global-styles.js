@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { css } from "styled-components";
+//import { css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle `
 *{
@@ -8,9 +8,7 @@ export const GlobalStyle = createGlobalStyle `
 }
 
 body{
-${({theme})=> css `
-background: ${theme.colors.mainBg}`
-}
+
 
 }
 
