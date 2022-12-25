@@ -13,7 +13,18 @@ const titleSize = {
     big:(theme) => css`
     font-size: ${theme.sizes.xhuge};
     `,
+    huge:(theme) => css`
+    font-size: ${theme.font.sizes.xhuge};
+    ${mediaFont(theme)};
+    `,
 };
+const mediaFont = (theme) => css`
+@media ${theme.media.lteMedium}{
+    font-size: ${theme.font.size.xlarge};
+}
+`;
+
+
 
 const titleCase =(upperCase)=>css`
 text-transform: ${upperCase ? 'uppercase' : 'none'};
