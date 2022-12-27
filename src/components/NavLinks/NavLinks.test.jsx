@@ -15,6 +15,7 @@ describe('<NavLinks />',   () =>{
     });
     it('should render links', () =>{
         renderTheme(<NavLinks links={mock} />);
+        screen.debug(screen.getByText(/link 10/i).parentElement);
         expect(screen.getByText(/link 10/i).parentElement).toHaveStyleRule(
             'flex-flow',
             'column wrap',
