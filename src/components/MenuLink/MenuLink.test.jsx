@@ -8,12 +8,12 @@ describe('<MenuLink />',   () =>{
         expect(screen.getByRole('link',{name:'children'})).toHaveAttribute('target', '_self');
     });
     it('should render open in a new tab', () =>{
-        renderTheme(
+        const {container} =renderTheme(
         <MenuLink link="http://localhost">
             children
             </MenuLink>
             );
-        expect(screen.getByRole('link',{name:'children'}))
-        .toMatchInlineSnapshot(``);
+        expect(container.firstChild)
+        .toMatchInlineSnapshot();
     });
 });
