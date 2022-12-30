@@ -1,7 +1,7 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.p`
-    ${({theme})=> css`
+export const Container = styled.div`
+  ${({ theme }) => css`
     font-size: ${theme.font.sizes.medium};
-    `}
+  `}
 `;

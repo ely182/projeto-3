@@ -1,31 +1,31 @@
 import { Heading } from '.';
 
 export default {
-    title: 'Heading',
-    component: Heading,
-    args:{
-        children: 'texto escuro',
+  title: 'Heading',
+  component: Heading,
+  args: {
+    children: 'O texto está escuro',
+  },
+  argTypes: {
+    children: { type: 'string' },
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark',
     },
-    argType:{
-        children:{type:'string',},
-        light: {type:'boolean',},
-    },
-    parameters:{
-        backgraounds:{
-            default:'dark',
-        },
-    },
+  },
 };
 
-export const Light = (args) => <Heading {...args}/>;
+export const Light = (args) => <Heading {...args} />;
 export const Dark = (args) => <Heading {...args} />;
 
 Light.parameters = {
-    backgraounds:{
-        default:'light',
-    },
+  backgrounds: {
+    default: 'light',
+  },
 };
+
 Dark.args = {
-   children:'texto claro',
-   colorDark= false,
+  children: 'O texto está claro',
+  colorDark: false,
 };

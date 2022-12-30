@@ -1,20 +1,21 @@
-import { P } from 'prop-types';
+import P from 'prop-types';
 import * as Styled from './styles';
-import {Heading} from '../Heading';
+import { Heading } from '../Heading';
+import { Link } from 'react-router-dom';
 
-export const logoLink = ({text, srcImg='', link}) => {
-    return (
-        <Heading>
-
-        <Styled.Container>
-           {srcImg ? <img src={srcImg} alt={text}/> : <span>{text}</span>}
-          
-        </Styled.Container>
-        </Heading>
-    );
+export const LogoLink = ({ text, srcImg = '', link }) => {
+  return (
+    <Heading size="small" uppercase>
+      <Styled.Container href={link}>
+        {!!srcImg && <img src={srcImg} alt={text} />}
+        {!srcImg && text}
+      </Styled.Container>
+    </Heading>
+  );
 };
-logoLink.prototype = {
+
+LogoLink.propTypes = {
   text: P.string.isRequired,
-  image: P.string,
+  srcImg: P.string,
   link: P.string.isRequired,
 };
